@@ -1,0 +1,9 @@
+[submodule "External/octokit.objc"]
+	path = External/octokit.objc
+	url = https://github.com/octokit/octokit.objc.git
+[submodule "External/Freezer"]
+	path = External/Freezer
+	url = https://github.com/joshaber/Freezer.git
+[submodule "External/FXKeychain"]
+	path = External/FXKeychain
+	url = https://github.com/nicklockwood/FXKeychain.git

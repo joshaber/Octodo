@@ -1,0 +1,993 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		880D59BA18B997C800A7AAA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D59B918B997C800A7AAA6 /* Foundation.framework */; };
+		880D59BC18B997C800A7AAA6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D59BB18B997C800A7AAA6 /* CoreGraphics.framework */; };
+		880D59BE18B997C800A7AAA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D59BD18B997C800A7AAA6 /* UIKit.framework */; };
+		880D59C418B997C800A7AAA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880D59C218B997C800A7AAA6 /* InfoPlist.strings */; };
+		880D59C618B997C800A7AAA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D59C518B997C800A7AAA6 /* main.m */; };
+		880D59CA18B997C800A7AAA6 /* OTDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D59C918B997C800A7AAA6 /* OTDAppDelegate.m */; };
+		880D59CC18B997C800A7AAA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880D59CB18B997C800A7AAA6 /* Images.xcassets */; };
+		880D59D318B997C800A7AAA6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D59D218B997C800A7AAA6 /* XCTest.framework */; };
+		880D59D418B997C800A7AAA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D59B918B997C800A7AAA6 /* Foundation.framework */; };
+		880D59D518B997C800A7AAA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D59BD18B997C800A7AAA6 /* UIKit.framework */; };
+		880D59DD18B997C800A7AAA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880D59DB18B997C800A7AAA6 /* InfoPlist.strings */; };
+		880D59DF18B997C800A7AAA6 /* OctodoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 880D59DE18B997C800A7AAA6 /* OctodoTests.m */; };
+		880D5A9B18B999A400A7AAA6 /* libFreezer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A9A18B999A400A7AAA6 /* libFreezer.a */; };
+		880D5A9C18B999B700A7AAA6 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A4418B9989F00A7AAA6 /* libAFNetworking.a */; };
+		880D5A9D18B999C300A7AAA6 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A2F18B9989600A7AAA6 /* libReactiveCocoa-iOS.a */; };
+		880D5A9E18B999C700A7AAA6 /* libMantle-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A1D18B9988F00A7AAA6 /* libMantle-iOS.a */; };
+		880D5A9F18B999CC00A7AAA6 /* libOctoKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A0D18B9988500A7AAA6 /* libOctoKit.a */; };
+		880D5B6518B99FCC00A7AAA6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6418B99FCC00A7AAA6 /* SystemConfiguration.framework */; };
+		880D5B6718B99FEB00A7AAA6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */; };
+		880D5B6918B9A12300A7AAA6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */; };
+		880D5B6A18B9A14E00A7AAA6 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A4818B9989F00A7AAA6 /* libISO8601DateFormatter.a */; };
+		88F001AD18BA8F82008EAA53 /* FXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F001AC18BA8F82008EAA53 /* FXKeychain.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		880D59D618B997C800A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59AE18B997C800A7AAA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 880D59B518B997C800A7AAA6;
+			remoteInfo = Octodo;
+		};
+		880D59F318B9987F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88FD309E182B25A8004CFDD4;
+			remoteInfo = Freezer;
+		};
+		880D59F518B9987F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88FD30AE182B25A8004CFDD4;
+			remoteInfo = FreezerTests;
+		};
+		880D5A0818B9988500A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871EA8169E2EFC00016ACA;
+			remoteInfo = "OctoKit Mac";
+		};
+		880D5A0A18B9988500A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871EC0169E2EFC00016ACA;
+			remoteInfo = "OctoKit Mac Tests";
+		};
+		880D5A0C18B9988500A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871FE4169E309900016ACA;
+			remoteInfo = "OctoKit iOS";
+		};
+		880D5A0E18B9988500A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871FF3169E309A00016ACA;
+			remoteInfo = "OctoKit iOS Tests";
+		};
+		880D5A1818B9988F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC3C15F72B23004E8054;
+			remoteInfo = Mantle;
+		};
+		880D5A1A18B9988F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC5415F72B23004E8054;
+			remoteInfo = "Mantle Tests";
+		};
+		880D5A1C18B9988F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC7915F72BC7004E8054;
+			remoteInfo = "Mantle-iOS";
+		};
+		880D5A1E18B9988F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC8715F72BC7004E8054;
+			remoteInfo = "Mantle-iOS Tests";
+		};
+		880D5A2018B9988F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0A56B461804B04900A84EDC;
+			remoteInfo = "Mantle-Mac";
+		};
+		880D5A2C18B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88037F8315056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
+		880D5A2E18B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+		880D5A3018B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
+			remoteInfo = ReactiveCocoaTests;
+		};
+		880D5A3218B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FAF5223174D4C2000CAC810;
+			remoteInfo = "ReactiveCocoaTests-iOS";
+		};
+		880D5A3418B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1860F412177C91B500C7B3C9;
+			remoteInfo = "ReactiveCocoa-iOS-UIKitTestHost";
+		};
+		880D5A3618B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1860F430177C91B500C7B3C9;
+			remoteInfo = "ReactiveCocoa-iOS-UIKitTestHostTests";
+		};
+		880D5A3818B9989600A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D05AD39417F2D56F0080895B;
+			remoteInfo = "ReactiveCocoa-Mac";
+		};
+		880D5A4118B9989F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476DBD177916920071F3CB;
+			remoteInfo = "AFNetworking Mac";
+		};
+		880D5A4318B9989F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476DFF177917050071F3CB;
+			remoteInfo = "AFNetworking iOS";
+		};
+		880D5A4518B9989F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476E5E17791AA50071F3CB;
+			remoteInfo = "ISO8601DateFormatter Mac";
+		};
+		880D5A4718B9989F00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476E8817791AE70071F3CB;
+			remoteInfo = "ISO8601DateFormatter iOS";
+		};
+		880D5A4918B998DB00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0476DFE177917050071F3CB;
+			remoteInfo = "AFNetworking iOS";
+		};
+		880D5A4B18B998DB00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0476E8717791AE70071F3CB;
+			remoteInfo = "ISO8601DateFormatter iOS";
+		};
+		880D5A4F18B998DB00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D042FC7815F72BC7004E8054;
+			remoteInfo = "Mantle-iOS";
+		};
+		880D5A5118B998DB00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0871FE3169E309900016ACA;
+			remoteInfo = "OctoKit iOS";
+		};
+		880D5A9918B999A400A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 880D5A5718B998FE00A7AAA6;
+			remoteInfo = "Freezer-iOS";
+		};
+		880D5B6218B99ECA00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 880D5A5618B998FE00A7AAA6;
+			remoteInfo = "Freezer-iOS";
+		};
+		880D5B6B18B9A23C00A7AAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F440AA153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		880D59B618B997C800A7AAA6 /* Octodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Octodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		880D59B918B997C800A7AAA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		880D59BB18B997C800A7AAA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		880D59BD18B997C800A7AAA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		880D59C118B997C800A7AAA6 /* Octodo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Octodo-Info.plist"; sourceTree = "<group>"; };
+		880D59C318B997C800A7AAA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		880D59C518B997C800A7AAA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		880D59C718B997C800A7AAA6 /* Octodo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Octodo-Prefix.pch"; sourceTree = "<group>"; };
+		880D59C818B997C800A7AAA6 /* OTDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTDAppDelegate.h; sourceTree = "<group>"; };
+		880D59C918B997C800A7AAA6 /* OTDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTDAppDelegate.m; sourceTree = "<group>"; };
+		880D59CB18B997C800A7AAA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		880D59D118B997C800A7AAA6 /* OctodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OctodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		880D59D218B997C800A7AAA6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		880D59DA18B997C800A7AAA6 /* OctodoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OctodoTests-Info.plist"; sourceTree = "<group>"; };
+		880D59DC18B997C800A7AAA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		880D59DE18B997C800A7AAA6 /* OctodoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OctodoTests.m; sourceTree = "<group>"; };
+		880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Freezer.xcodeproj; path = External/Freezer/Freezer.xcodeproj; sourceTree = "<group>"; };
+		880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = External/octokit.objc/OctoKit.xcodeproj; sourceTree = "<group>"; };
+		880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = External/octokit.objc/External/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
+		880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = External/octokit.objc/External/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
+		880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKitDependencies.xcodeproj; path = External/octokit.objc/External/OctoKitDependencies/OctoKitDependencies.xcodeproj; sourceTree = "<group>"; };
+		880D5B6418B99FCC00A7AAA6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		88F001AB18BA8F82008EAA53 /* FXKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXKeychain.h; sourceTree = "<group>"; };
+		88F001AC18BA8F82008EAA53 /* FXKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXKeychain.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		880D59B318B997C800A7AAA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880D5B6A18B9A14E00A7AAA6 /* libISO8601DateFormatter.a in Frameworks */,
+				880D5B6918B9A12300A7AAA6 /* libsqlite3.dylib in Frameworks */,
+				880D5B6718B99FEB00A7AAA6 /* MobileCoreServices.framework in Frameworks */,
+				880D5B6518B99FCC00A7AAA6 /* SystemConfiguration.framework in Frameworks */,
+				880D5A9F18B999CC00A7AAA6 /* libOctoKit.a in Frameworks */,
+				880D5A9E18B999C700A7AAA6 /* libMantle-iOS.a in Frameworks */,
+				880D5A9C18B999B700A7AAA6 /* libAFNetworking.a in Frameworks */,
+				880D5A9B18B999A400A7AAA6 /* libFreezer.a in Frameworks */,
+				880D5A9D18B999C300A7AAA6 /* libReactiveCocoa-iOS.a in Frameworks */,
+				880D59BC18B997C800A7AAA6 /* CoreGraphics.framework in Frameworks */,
+				880D59BE18B997C800A7AAA6 /* UIKit.framework in Frameworks */,
+				880D59BA18B997C800A7AAA6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880D59CE18B997C800A7AAA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880D59D318B997C800A7AAA6 /* XCTest.framework in Frameworks */,
+				880D59D518B997C800A7AAA6 /* UIKit.framework in Frameworks */,
+				880D59D418B997C800A7AAA6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		880D59AD18B997C800A7AAA6 = {
+			isa = PBXGroup;
+			children = (
+				880D59BF18B997C800A7AAA6 /* Octodo */,
+				880D59D818B997C800A7AAA6 /* OctodoTests */,
+				880D59B818B997C800A7AAA6 /* Frameworks */,
+				880D59B718B997C800A7AAA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		880D59B718B997C800A7AAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880D59B618B997C800A7AAA6 /* Octodo.app */,
+				880D59D118B997C800A7AAA6 /* OctodoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880D59B818B997C800A7AAA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88F001AA18BA8F82008EAA53 /* FXKeychain */,
+				880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */,
+				880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */,
+				880D5B6418B99FCC00A7AAA6 /* SystemConfiguration.framework */,
+				880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */,
+				880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */,
+				880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */,
+				880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */,
+				880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */,
+				880D59B918B997C800A7AAA6 /* Foundation.framework */,
+				880D59BB18B997C800A7AAA6 /* CoreGraphics.framework */,
+				880D59BD18B997C800A7AAA6 /* UIKit.framework */,
+				880D59D218B997C800A7AAA6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		880D59BF18B997C800A7AAA6 /* Octodo */ = {
+			isa = PBXGroup;
+			children = (
+				880D59C818B997C800A7AAA6 /* OTDAppDelegate.h */,
+				880D59C918B997C800A7AAA6 /* OTDAppDelegate.m */,
+				880D59CB18B997C800A7AAA6 /* Images.xcassets */,
+				880D59C018B997C800A7AAA6 /* Supporting Files */,
+			);
+			path = Octodo;
+			sourceTree = "<group>";
+		};
+		880D59C018B997C800A7AAA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				880D59C118B997C800A7AAA6 /* Octodo-Info.plist */,
+				880D59C218B997C800A7AAA6 /* InfoPlist.strings */,
+				880D59C518B997C800A7AAA6 /* main.m */,
+				880D59C718B997C800A7AAA6 /* Octodo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		880D59D818B997C800A7AAA6 /* OctodoTests */ = {
+			isa = PBXGroup;
+			children = (
+				880D59DE18B997C800A7AAA6 /* OctodoTests.m */,
+				880D59D918B997C800A7AAA6 /* Supporting Files */,
+			);
+			path = OctodoTests;
+			sourceTree = "<group>";
+		};
+		880D59D918B997C800A7AAA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				880D59DA18B997C800A7AAA6 /* OctodoTests-Info.plist */,
+				880D59DB18B997C800A7AAA6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		880D59E918B9987E00A7AAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880D59F418B9987F00A7AAA6 /* Freezer.framework */,
+				880D59F618B9987F00A7AAA6 /* FreezerTests.octest */,
+				880D5A9A18B999A400A7AAA6 /* libFreezer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880D59F818B9988400A7AAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880D5A0918B9988500A7AAA6 /* OctoKit.framework */,
+				880D5A0B18B9988500A7AAA6 /* OctoKit Mac Tests.octest */,
+				880D5A0D18B9988500A7AAA6 /* libOctoKit.a */,
+				880D5A0F18B9988500A7AAA6 /* OctoKit iOS Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880D5A1118B9988E00A7AAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880D5A1918B9988F00A7AAA6 /* Mantle.framework */,
+				880D5A1B18B9988F00A7AAA6 /* Mantle Tests.octest */,
+				880D5A1D18B9988F00A7AAA6 /* libMantle-iOS.a */,
+				880D5A1F18B9988F00A7AAA6 /* Mantle-iOS Tests.octest */,
+				880D5A2118B9988F00A7AAA6 /* libMantle-Mac.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880D5A2318B9989600A7AAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880D5A2D18B9989600A7AAA6 /* ReactiveCocoa.framework */,
+				880D5A2F18B9989600A7AAA6 /* libReactiveCocoa-iOS.a */,
+				880D5A3118B9989600A7AAA6 /* ReactiveCocoaTests.octest */,
+				880D5A3318B9989600A7AAA6 /* ReactiveCocoaTests-iOS.octest */,
+				880D5A3518B9989600A7AAA6 /* ReactiveCocoa-iOS-UIKitTestHost.app */,
+				880D5A3718B9989600A7AAA6 /* ReactiveCocoa-iOS-UIKitTestHostTests.octest */,
+				880D5A3918B9989600A7AAA6 /* libReactiveCocoa-Mac.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880D5A3B18B9989F00A7AAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880D5A4218B9989F00A7AAA6 /* AFNetworking.framework */,
+				880D5A4418B9989F00A7AAA6 /* libAFNetworking.a */,
+				880D5A4618B9989F00A7AAA6 /* ISO8601DateFormatter.framework */,
+				880D5A4818B9989F00A7AAA6 /* libISO8601DateFormatter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F001AA18BA8F82008EAA53 /* FXKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				88F001AB18BA8F82008EAA53 /* FXKeychain.h */,
+				88F001AC18BA8F82008EAA53 /* FXKeychain.m */,
+			);
+			name = FXKeychain;
+			path = External/FXKeychain/FXKeychain;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		880D59B518B997C800A7AAA6 /* Octodo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880D59E218B997C800A7AAA6 /* Build configuration list for PBXNativeTarget "Octodo" */;
+			buildPhases = (
+				880D59B218B997C800A7AAA6 /* Sources */,
+				880D59B318B997C800A7AAA6 /* Frameworks */,
+				880D59B418B997C800A7AAA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880D5B6C18B9A23C00A7AAA6 /* PBXTargetDependency */,
+				880D5B6318B99ECA00A7AAA6 /* PBXTargetDependency */,
+				880D5A4A18B998DB00A7AAA6 /* PBXTargetDependency */,
+				880D5A4C18B998DB00A7AAA6 /* PBXTargetDependency */,
+				880D5A5018B998DB00A7AAA6 /* PBXTargetDependency */,
+				880D5A5218B998DB00A7AAA6 /* PBXTargetDependency */,
+			);
+			name = Octodo;
+			productName = Octodo;
+			productReference = 880D59B618B997C800A7AAA6 /* Octodo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		880D59D018B997C800A7AAA6 /* OctodoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880D59E518B997C800A7AAA6 /* Build configuration list for PBXNativeTarget "OctodoTests" */;
+			buildPhases = (
+				880D59CD18B997C800A7AAA6 /* Sources */,
+				880D59CE18B997C800A7AAA6 /* Frameworks */,
+				880D59CF18B997C800A7AAA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880D59D718B997C800A7AAA6 /* PBXTargetDependency */,
+			);
+			name = OctodoTests;
+			productName = OctodoTests;
+			productReference = 880D59D118B997C800A7AAA6 /* OctodoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		880D59AE18B997C800A7AAA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OTD;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Josh Abernathy";
+				TargetAttributes = {
+					880D59D018B997C800A7AAA6 = {
+						TestTargetID = 880D59B518B997C800A7AAA6;
+					};
+				};
+			};
+			buildConfigurationList = 880D59B118B997C800A7AAA6 /* Build configuration list for PBXProject "Octodo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 880D59AD18B997C800A7AAA6;
+			productRefGroup = 880D59B718B997C800A7AAA6 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 880D59E918B9987E00A7AAA6 /* Products */;
+					ProjectRef = 880D59E818B9987E00A7AAA6 /* Freezer.xcodeproj */;
+				},
+				{
+					ProductGroup = 880D5A1118B9988E00A7AAA6 /* Products */;
+					ProjectRef = 880D5A1018B9988E00A7AAA6 /* Mantle.xcodeproj */;
+				},
+				{
+					ProductGroup = 880D59F818B9988400A7AAA6 /* Products */;
+					ProjectRef = 880D59F718B9988400A7AAA6 /* OctoKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 880D5A3B18B9989F00A7AAA6 /* Products */;
+					ProjectRef = 880D5A3A18B9989F00A7AAA6 /* OctoKitDependencies.xcodeproj */;
+				},
+				{
+					ProductGroup = 880D5A2318B9989600A7AAA6 /* Products */;
+					ProjectRef = 880D5A2218B9989600A7AAA6 /* ReactiveCocoa.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				880D59B518B997C800A7AAA6 /* Octodo */,
+				880D59D018B997C800A7AAA6 /* OctodoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		880D59F418B9987F00A7AAA6 /* Freezer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freezer.framework;
+			remoteRef = 880D59F318B9987F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D59F618B9987F00A7AAA6 /* FreezerTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FreezerTests.octest;
+			remoteRef = 880D59F518B9987F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A0918B9988500A7AAA6 /* OctoKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OctoKit.framework;
+			remoteRef = 880D5A0818B9988500A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A0B18B9988500A7AAA6 /* OctoKit Mac Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "OctoKit Mac Tests.octest";
+			remoteRef = 880D5A0A18B9988500A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A0D18B9988500A7AAA6 /* libOctoKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOctoKit.a;
+			remoteRef = 880D5A0C18B9988500A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A0F18B9988500A7AAA6 /* OctoKit iOS Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "OctoKit iOS Tests.octest";
+			remoteRef = 880D5A0E18B9988500A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A1918B9988F00A7AAA6 /* Mantle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Mantle.framework;
+			remoteRef = 880D5A1818B9988F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A1B18B9988F00A7AAA6 /* Mantle Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Mantle Tests.octest";
+			remoteRef = 880D5A1A18B9988F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A1D18B9988F00A7AAA6 /* libMantle-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMantle-iOS.a";
+			remoteRef = 880D5A1C18B9988F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A1F18B9988F00A7AAA6 /* Mantle-iOS Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Mantle-iOS Tests.octest";
+			remoteRef = 880D5A1E18B9988F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A2118B9988F00A7AAA6 /* libMantle-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMantle-Mac.a";
+			remoteRef = 880D5A2018B9988F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A2D18B9989600A7AAA6 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = 880D5A2C18B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A2F18B9989600A7AAA6 /* libReactiveCocoa-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactiveCocoa-iOS.a";
+			remoteRef = 880D5A2E18B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A3118B9989600A7AAA6 /* ReactiveCocoaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.octest;
+			remoteRef = 880D5A3018B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A3318B9989600A7AAA6 /* ReactiveCocoaTests-iOS.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ReactiveCocoaTests-iOS.octest";
+			remoteRef = 880D5A3218B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A3518B9989600A7AAA6 /* ReactiveCocoa-iOS-UIKitTestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "ReactiveCocoa-iOS-UIKitTestHost.app";
+			remoteRef = 880D5A3418B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A3718B9989600A7AAA6 /* ReactiveCocoa-iOS-UIKitTestHostTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ReactiveCocoa-iOS-UIKitTestHostTests.octest";
+			remoteRef = 880D5A3618B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A3918B9989600A7AAA6 /* libReactiveCocoa-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactiveCocoa-Mac.a";
+			remoteRef = 880D5A3818B9989600A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A4218B9989F00A7AAA6 /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 880D5A4118B9989F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A4418B9989F00A7AAA6 /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 880D5A4318B9989F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A4618B9989F00A7AAA6 /* ISO8601DateFormatter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ISO8601DateFormatter.framework;
+			remoteRef = 880D5A4518B9989F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A4818B9989F00A7AAA6 /* libISO8601DateFormatter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libISO8601DateFormatter.a;
+			remoteRef = 880D5A4718B9989F00A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		880D5A9A18B999A400A7AAA6 /* libFreezer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFreezer.a;
+			remoteRef = 880D5A9918B999A400A7AAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		880D59B418B997C800A7AAA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880D59C418B997C800A7AAA6 /* InfoPlist.strings in Resources */,
+				880D59CC18B997C800A7AAA6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880D59CF18B997C800A7AAA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880D59DD18B997C800A7AAA6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		880D59B218B997C800A7AAA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880D59CA18B997C800A7AAA6 /* OTDAppDelegate.m in Sources */,
+				880D59C618B997C800A7AAA6 /* main.m in Sources */,
+				88F001AD18BA8F82008EAA53 /* FXKeychain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880D59CD18B997C800A7AAA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880D59DF18B997C800A7AAA6 /* OctodoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		880D59D718B997C800A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 880D59B518B997C800A7AAA6 /* Octodo */;
+			targetProxy = 880D59D618B997C800A7AAA6 /* PBXContainerItemProxy */;
+		};
+		880D5A4A18B998DB00A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AFNetworking iOS";
+			targetProxy = 880D5A4918B998DB00A7AAA6 /* PBXContainerItemProxy */;
+		};
+		880D5A4C18B998DB00A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ISO8601DateFormatter iOS";
+			targetProxy = 880D5A4B18B998DB00A7AAA6 /* PBXContainerItemProxy */;
+		};
+		880D5A5018B998DB00A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Mantle-iOS";
+			targetProxy = 880D5A4F18B998DB00A7AAA6 /* PBXContainerItemProxy */;
+		};
+		880D5A5218B998DB00A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OctoKit iOS";
+			targetProxy = 880D5A5118B998DB00A7AAA6 /* PBXContainerItemProxy */;
+		};
+		880D5B6318B99ECA00A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Freezer-iOS";
+			targetProxy = 880D5B6218B99ECA00A7AAA6 /* PBXContainerItemProxy */;
+		};
+		880D5B6C18B9A23C00A7AAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ReactiveCocoa-iOS";
+			targetProxy = 880D5B6B18B9A23C00A7AAA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		880D59C218B997C800A7AAA6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				880D59C318B997C800A7AAA6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		880D59DB18B997C800A7AAA6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				880D59DC18B997C800A7AAA6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		880D59E018B997C800A7AAA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		880D59E118B997C800A7AAA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		880D59E318B997C800A7AAA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Octodo/Octodo-Prefix.pch";
+				INFOPLIST_FILE = "Octodo/Octodo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		880D59E418B997C800A7AAA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Octodo/Octodo-Prefix.pch";
+				INFOPLIST_FILE = "Octodo/Octodo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		880D59E618B997C800A7AAA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Octodo.app/Octodo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Octodo/Octodo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OctodoTests/OctodoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		880D59E718B997C800A7AAA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Octodo.app/Octodo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Octodo/Octodo-Prefix.pch";
+				INFOPLIST_FILE = "OctodoTests/OctodoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		880D59B118B997C800A7AAA6 /* Build configuration list for PBXProject "Octodo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880D59E018B997C800A7AAA6 /* Debug */,
+				880D59E118B997C800A7AAA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880D59E218B997C800A7AAA6 /* Build configuration list for PBXNativeTarget "Octodo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880D59E318B997C800A7AAA6 /* Debug */,
+				880D59E418B997C800A7AAA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880D59E518B997C800A7AAA6 /* Build configuration list for PBXNativeTarget "OctodoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880D59E618B997C800A7AAA6 /* Debug */,
+				880D59E718B997C800A7AAA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 880D59AE18B997C800A7AAA6 /* Project object */;
+}
