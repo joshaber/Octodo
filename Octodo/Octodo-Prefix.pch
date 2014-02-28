@@ -16,6 +16,7 @@
 	#import <SystemConfiguration/SystemConfiguration.h>
 	#import <MobileCoreServices/MobileCoreServices.h>
 	#import <ReactiveCocoa/ReactiveCocoa.h>
+	#import <ReactiveCocoa/EXTScope.h>
 	#import <Mantle/Mantle.h>
 	#import <Octokit/Octokit.h>
 	#import <Freezer/Freezer.h>
