@@ -28,6 +28,9 @@
 		880D5B6718B99FEB00A7AAA6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */; };
 		880D5B6918B9A12300A7AAA6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */; };
 		880D5B6A18B9A14E00A7AAA6 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A4818B9989F00A7AAA6 /* libISO8601DateFormatter.a */; };
+		88DF996518C02AD900E5C480 /* OTDIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DF996318C02AD900E5C480 /* OTDIssuesViewController.m */; };
+		88DF996618C02AD900E5C480 /* OTDIssuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */; };
+		88DF997A18C02C7800E5C480 /* OTDIssuesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */; };
 		88F001AD18BA8F82008EAA53 /* FXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F001AC18BA8F82008EAA53 /* FXKeychain.m */; };
 /* End PBXBuildFile section */
 
@@ -269,6 +272,11 @@
 		880D5B6418B99FCC00A7AAA6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		88DF996218C02AD900E5C480 /* OTDIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTDIssuesViewController.h; sourceTree = "<group>"; };
+		88DF996318C02AD900E5C480 /* OTDIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDIssuesViewController.m; sourceTree = "<group>"; };
+		88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTDIssuesViewController.xib; sourceTree = "<group>"; };
+		88DF997818C02C7800E5C480 /* OTDIssuesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTDIssuesViewModel.h; sourceTree = "<group>"; };
+		88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDIssuesViewModel.m; sourceTree = "<group>"; };
 		88F001AB18BA8F82008EAA53 /* FXKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXKeychain.h; sourceTree = "<group>"; };
 		88F001AC18BA8F82008EAA53 /* FXKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXKeychain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +358,11 @@
 			children = (
 				880D59C818B997C800A7AAA6 /* OTDAppDelegate.h */,
 				880D59C918B997C800A7AAA6 /* OTDAppDelegate.m */,
+				88DF996218C02AD900E5C480 /* OTDIssuesViewController.h */,
+				88DF996318C02AD900E5C480 /* OTDIssuesViewController.m */,
+				88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */,
+				88DF997818C02C7800E5C480 /* OTDIssuesViewModel.h */,
+				88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */,
 				880D59CB18B997C800A7AAA6 /* Images.xcassets */,
 				880D59C018B997C800A7AAA6 /* Supporting Files */,
 			);
@@ -723,6 +736,7 @@
 			files = (
 				880D59C418B997C800A7AAA6 /* InfoPlist.strings in Resources */,
 				880D59CC18B997C800A7AAA6 /* Images.xcassets in Resources */,
+				88DF996618C02AD900E5C480 /* OTDIssuesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +756,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				880D59CA18B997C800A7AAA6 /* OTDAppDelegate.m in Sources */,
+				88DF997A18C02C7800E5C480 /* OTDIssuesViewModel.m in Sources */,
 				880D59C618B997C800A7AAA6 /* main.m in Sources */,
+				88DF996518C02AD900E5C480 /* OTDIssuesViewController.m in Sources */,
 				88F001AD18BA8F82008EAA53 /* FXKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

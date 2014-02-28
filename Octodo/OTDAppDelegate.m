@@ -7,15 +7,21 @@
 //
 
 #import "OTDAppDelegate.h"
+#import "OTDIssuesViewController.h"
+#import "OTDIssuesViewModel.h"
 
 static NSString * const OTDAppDelegateTodoRepositoryName = @"todo";
 
 static NSString * const OTDAppDelegateToken = @"token";
 static NSString * const OTDAppDelegateLogin = @"login";
 
+static NSString * const OTDIssues = @"issues";
+
 @interface OTDAppDelegate ()
 
 @property (nonatomic, readonly, strong) FRZStore *store;
+
+@property (nonatomic, readonly, strong) OTDIssuesViewController *issuesViewController;
 
 @end
 
@@ -26,10 +32,6 @@ static NSString * const OTDAppDelegateLogin = @"login";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[OCTClient setClientID:@"276833559f2fcc2fd774" clientSecret:@"9e39c09a12fab056440c6c41d31b2e60a6ba6a12"];
 	OCTClient.userAgent = @"Octodo/0.1";
-
-	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-	self.window.backgroundColor = UIColor.whiteColor;
-	[self.window makeKeyAndVisible];
 
 	NSError *error;
 	_store = [[FRZStore alloc] initWithURL:self.storeURL error:&error];
@@ -51,30 +53,24 @@ static NSString * const OTDAppDelegateLogin = @"login";
 	[[[RACSignal
 		zip:@[ [self loadClient], [trim concat:[RACSignal return:nil]] ]
 		reduce:^(OCTClient *client, id _) {
-			return [[self findTodoIssues:client] collect];
+			return [self updateIssuesCacheWithClient:client];
 		}]
 		flatten]
-		subscribeNext:^(NSArray *issues) {
-			FRZTransactor *transactor = [self.store transactor];
-			NSError *error;
-			BOOL success = [transactor performChangesWithError:&error block:^(NSError **error) {
-				for (OCTIssue *issue in issues) {
-					BOOL success = [transactor addValues:issue.dictionaryValue forID:issue.objectID error:error];
-					if (!success) return NO;
-				}
-
-				return YES;
-			}];
-
-			if (!success) {
-				NSLog(@"Error caching issues: %@", error);
-			}
-
-			NSLog(@"Issues: %@", issues);
-		}
-		error:^(NSError *error) {
-			NSLog(@"%@", error);
+		subscribeError:^(NSError *error) {
+			NSLog(@"Error updating issues cache: %@", error);
 		}];
+
+	RACSignal *issues = [self.store valuesAndChangesForID:OTDIssues];
+	OTDIssuesViewModel *viewModel = [[OTDIssuesViewModel alloc] initWithIssuesFeed:issues];
+	_issuesViewController = [[OTDIssuesViewController alloc] initWithViewModel:viewModel];
+
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	self.window.backgroundColor = UIColor.whiteColor;
+
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.issuesViewController];
+	self.window.rootViewController = navigationController;
+
+	[self.window makeKeyAndVisible];
 	
 	return YES;
 }
@@ -85,6 +81,31 @@ static NSString * const OTDAppDelegateLogin = @"login";
 }
 
 #pragma mark Data
+
+- (RACSignal *)updateIssuesCacheWithClient:(OCTClient *)client {
+	return [[[self
+		findTodoIssues:client]
+		collect]
+		flattenMap:^(NSArray *issues) {
+			FRZTransactor *transactor = [self.store transactor];
+			NSError *error;
+			BOOL success = [transactor performChangesWithError:&error block:^(NSError **error) {
+				for (OCTIssue *issue in issues) {
+					BOOL success = [transactor addValues:issue.dictionaryValue forID:issue.objectID error:error];
+					if (!success) return NO;
+
+					success = [transactor addValue:issue.objectID forKey:issue.objectID ID:OTDIssues error:error];
+					if (!success) return NO;
+				}
+
+				return YES;
+			}];
+
+			if (!success) return [RACSignal error:error];
+
+			return [RACSignal empty];
+		}];
+}
 
 - (NSURL *)storeURL {
 	NSURL *libraryURL = [NSFileManager.defaultManager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask].lastObject;
