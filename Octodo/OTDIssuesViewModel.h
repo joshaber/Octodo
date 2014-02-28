@@ -12,6 +12,12 @@
 
 @property (nonatomic, readonly, copy) NSArray *issues;
 
+@property (nonatomic, readonly, strong) RACCommand *closeCommand;
+
+@property (nonatomic, strong) OCTClient *client;
+
+@property (nonatomic, strong) OCTRepository *repository;
+
 - (id)initWithIssuesFeed:(RACSignal *)issuesFeed;
 
 @end

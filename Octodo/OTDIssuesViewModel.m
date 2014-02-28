@@ -12,6 +12,8 @@
 
 @property (nonatomic, readonly, strong) RACSignal *issuesFeed;
 
+@property (nonatomic, readonly, strong) OCTIssue *issue;
+
 @end
 
 @implementation OTDIssuesViewModel
@@ -23,6 +25,28 @@
 	if (self == nil) return nil;
 
 	_issuesFeed = issuesFeed;
+
+	RACSignal *haveClient = [RACObserve(self, client) map:^(OCTClient *client) {
+		return @(client != nil);
+	}];
+
+	RACSignal *haveRepository = [RACObserve(self, repository) map:^(OCTRepository *repository) {
+		return @(repository != nil);
+	}];
+
+	RACSignal *enabled = [RACSignal combineLatest:@[ haveClient, haveRepository ] reduce:^(NSNumber *haveClient, NSNumber *haveRepository) {
+		return @(haveClient.boolValue && haveRepository.boolValue);
+	}];
+
+	@weakify(self);
+	_closeCommand = [[RACCommand alloc] initWithEnabled:enabled signalBlock:^(OCTIssue *issue) {
+		@strongify(self);
+		return [[self.client
+			postComment:@":boom:" forIssue:issue inRepository:self.repository]
+			then:^{
+				return [self.client closeIssue:issue inRepository:self.repository];
+			}];
+	}];
 
 	RAC(self, issues) = [[self.issuesFeed
 		reduceEach:^(NSDictionary *values, FRZChange *change) {

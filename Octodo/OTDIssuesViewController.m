@@ -40,14 +40,21 @@
 
 #pragma mark UIViewController
 
-- (NSString *)title {
-	return NSLocalizedString(@"Todos", @"");
+- (void)viewDidLoad {
+	[super viewDidLoad];
+
+	self.title = NSLocalizedString(@"Todo", @"");
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
 }
 
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return NSLocalizedString(@"Close", @"");
 }
 
 #pragma mark UITableViewDataSource
@@ -61,6 +68,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+		cell.textLabel.numberOfLines = 2;
 	}
 
 	OCTIssue *issue = [self issueWithIndexPath:indexPath];
@@ -69,10 +77,25 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//	[tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationLeft];
+
+	OCTIssue *issue = [self issueWithIndexPath:indexPath];
+	[[self.viewModel.closeCommand execute:issue] subscribeError:^(NSError *error) {
+		NSLog(@"Error closing %@: %@", issue, error);
+	}];
+}
+
 #pragma mark Data
 
 - (OCTIssue *)issueWithIndexPath:(NSIndexPath *)indexPath {
 	return self.viewModel.issues[indexPath.row];
+}
+
+#pragma mark Actions
+
+- (void)add {
+	NSLog(@"LOLOLOL");
 }
 
 @end

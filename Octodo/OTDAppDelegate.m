@@ -23,6 +23,8 @@ static NSString * const OTDIssues = @"issues";
 
 @property (nonatomic, readonly, strong) OTDIssuesViewController *issuesViewController;
 
+@property (nonatomic, readonly, strong) OTDIssuesViewModel *issuesViewModel;
+
 @end
 
 @implementation OTDAppDelegate
@@ -50,9 +52,14 @@ static NSString * const OTDIssues = @"issues";
 		}
 	}];
 
+	RACSignal *issues = [self.store valuesAndChangesForID:OTDIssues];
+	_issuesViewModel = [[OTDIssuesViewModel alloc] initWithIssuesFeed:issues];
+
 	[[[RACSignal
 		zip:@[ [self loadClient], [trim concat:[RACSignal return:nil]] ]
 		reduce:^(OCTClient *client, id _) {
+			self.issuesViewModel.client = client;
+
 			return [self updateIssuesCacheWithClient:client];
 		}]
 		flatten]
@@ -60,9 +67,7 @@ static NSString * const OTDIssues = @"issues";
 			NSLog(@"Error updating issues cache: %@", error);
 		}];
 
-	RACSignal *issues = [self.store valuesAndChangesForID:OTDIssues];
-	OTDIssuesViewModel *viewModel = [[OTDIssuesViewModel alloc] initWithIssuesFeed:issues];
-	_issuesViewController = [[OTDIssuesViewController alloc] initWithViewModel:viewModel];
+	_issuesViewController = [[OTDIssuesViewController alloc] initWithViewModel:self.issuesViewModel];
 
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 	self.window.backgroundColor = UIColor.whiteColor;
@@ -113,11 +118,14 @@ static NSString * const OTDIssues = @"issues";
 }
 
 - (RACSignal *)findTodoIssues:(OCTClient *)client {
-	return [[[client
+	return [[[[client
 		fetchRepositoryWithName:OTDAppDelegateTodoRepositoryName owner:client.user.rawLogin]
 		catch:^(NSError *error) {
 			NSLog(@"Error finding todo repository: %@", error);
 			return [RACSignal error:error];
+		}]
+		doNext:^(OCTRepository *repository) {
+			self.issuesViewModel.repository = repository;
 		}]
 		flattenMap:^(OCTRepository *repository) {
 			return [[client fetchOpenIssuesForRepository:repository] oct_parsedResults];
