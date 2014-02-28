@@ -1,6 +1,6 @@
 [submodule "External/octokit.objc"]
 	path = External/octokit.objc
-	url = https://github.com/octokit/octokit.objc.git
+	url = https://github.com/joshaber/octokit.objc.git
 [submodule "External/Freezer"]
 	path = External/Freezer
 	url = https://github.com/joshaber/Freezer.git
