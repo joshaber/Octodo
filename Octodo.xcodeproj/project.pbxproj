@@ -32,6 +32,7 @@
 		88DF996618C02AD900E5C480 /* OTDIssuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */; };
 		88DF997A18C02C7800E5C480 /* OTDIssuesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */; };
 		88F001AD18BA8F82008EAA53 /* FXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F001AC18BA8F82008EAA53 /* FXKeychain.m */; };
+		88F3628718C17D0000C66D2D /* OTDStoreClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F3628618C17D0000C66D2D /* OTDStoreClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +280,8 @@
 		88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDIssuesViewModel.m; sourceTree = "<group>"; };
 		88F001AB18BA8F82008EAA53 /* FXKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXKeychain.h; sourceTree = "<group>"; };
 		88F001AC18BA8F82008EAA53 /* FXKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXKeychain.m; sourceTree = "<group>"; };
+		88F3628518C17D0000C66D2D /* OTDStoreClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTDStoreClient.h; sourceTree = "<group>"; };
+		88F3628618C17D0000C66D2D /* OTDStoreClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDStoreClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 				88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */,
 				88DF997818C02C7800E5C480 /* OTDIssuesViewModel.h */,
 				88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */,
+				88F3628518C17D0000C66D2D /* OTDStoreClient.h */,
+				88F3628618C17D0000C66D2D /* OTDStoreClient.m */,
 				880D59CB18B997C800A7AAA6 /* Images.xcassets */,
 				880D59C018B997C800A7AAA6 /* Supporting Files */,
 			);
@@ -759,6 +764,7 @@
 				88DF997A18C02C7800E5C480 /* OTDIssuesViewModel.m in Sources */,
 				880D59C618B997C800A7AAA6 /* main.m in Sources */,
 				88DF996518C02AD900E5C480 /* OTDIssuesViewController.m in Sources */,
+				88F3628718C17D0000C66D2D /* OTDStoreClient.m in Sources */,
 				88F001AD18BA8F82008EAA53 /* FXKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,10 +7,11 @@
 //
 
 #import "OTDIssuesViewModel.h"
+#import "OTDStoreClient.h"
 
 @interface OTDIssuesViewModel ()
 
-@property (nonatomic, readonly, strong) RACSignal *issuesFeed;
+@property (nonatomic, readonly, strong) OTDStoreClient *storeClient;
 
 @property (nonatomic, readonly, strong) OCTIssue *issue;
 
@@ -18,13 +19,13 @@
 
 @implementation OTDIssuesViewModel
 
-- (id)initWithIssuesFeed:(RACSignal *)issuesFeed {
-	NSParameterAssert(issuesFeed != nil);
+- (id)initWithStoreClient:(OTDStoreClient *)storeClient {
+	NSParameterAssert(storeClient != nil);
 
 	self = [super init];
 	if (self == nil) return nil;
 
-	_issuesFeed = issuesFeed;
+	_storeClient = storeClient;
 
 	RACSignal *haveClient = [RACObserve(self, client) map:^(OCTClient *client) {
 		return @(client != nil);
@@ -48,7 +49,7 @@
 			}];
 	}];
 
-	RAC(self, issues) = [[self.issuesFeed
+	RAC(self, issues) = [[self.storeClient.issues
 		reduceEach:^(NSDictionary *values, FRZChange *change) {
 			return [[values.rac_keySequence
 				map:^(NSString *key) {

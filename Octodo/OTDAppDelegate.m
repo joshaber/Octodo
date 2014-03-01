@@ -9,21 +9,20 @@
 #import "OTDAppDelegate.h"
 #import "OTDIssuesViewController.h"
 #import "OTDIssuesViewModel.h"
+#import "OTDStoreClient.h"
 
 static NSString * const OTDAppDelegateTodoRepositoryName = @"todo";
 
 static NSString * const OTDAppDelegateToken = @"token";
 static NSString * const OTDAppDelegateLogin = @"login";
 
-static NSString * const OTDIssues = @"issues";
-
 @interface OTDAppDelegate ()
-
-@property (nonatomic, readonly, strong) FRZStore *store;
 
 @property (nonatomic, readonly, strong) OTDIssuesViewController *issuesViewController;
 
 @property (nonatomic, readonly, strong) OTDIssuesViewModel *issuesViewModel;
+
+@property (nonatomic, readonly, strong) OTDStoreClient *storeClient;
 
 @end
 
@@ -36,15 +35,17 @@ static NSString * const OTDIssues = @"issues";
 	OCTClient.userAgent = @"Octodo/0.1";
 
 	NSError *error;
-	_store = [[FRZStore alloc] initWithURL:self.storeURL error:&error];
-	if (self.store == nil) {
+	FRZStore *store = [[FRZStore alloc] initWithURL:self.storeURL error:&error];
+	if (store == nil) {
 		NSLog(@"Error initializing store: %@", error);
 		return NO;
 	}
 
+	_storeClient = [[OTDStoreClient alloc] initWithStore:store];
+
 	RACSignal *trim = [RACSignal startLazilyWithScheduler:[RACScheduler scheduler] block:^(id<RACSubscriber> subscriber) {
 		NSError *error;
-		BOOL success = [[self.store transactor] trim:&error];
+		BOOL success = [[store transactor] trim:&error];
 		if (!success) {
 			[subscriber sendError:error];
 		} else {
@@ -52,8 +53,7 @@ static NSString * const OTDIssues = @"issues";
 		}
 	}];
 
-	RACSignal *issues = [self.store valuesAndChangesForID:OTDIssues];
-	_issuesViewModel = [[OTDIssuesViewModel alloc] initWithIssuesFeed:issues];
+	_issuesViewModel = [[OTDIssuesViewModel alloc] initWithStoreClient:self.storeClient];
 
 	[[[RACSignal
 		zip:@[ [self loadClient], [trim concat:[RACSignal return:nil]] ]
@@ -92,23 +92,7 @@ static NSString * const OTDIssues = @"issues";
 		findTodoIssues:client]
 		collect]
 		flattenMap:^(NSArray *issues) {
-			FRZTransactor *transactor = [self.store transactor];
-			NSError *error;
-			BOOL success = [transactor performChangesWithError:&error block:^(NSError **error) {
-				for (OCTIssue *issue in issues) {
-					BOOL success = [transactor addValues:issue.dictionaryValue forID:issue.objectID error:error];
-					if (!success) return NO;
-
-					success = [transactor addValue:issue.objectID forKey:issue.objectID ID:OTDIssues error:error];
-					if (!success) return NO;
-				}
-
-				return YES;
-			}];
-
-			if (!success) return [RACSignal error:error];
-
-			return [RACSignal empty];
+			return [self.storeClient storeIssues:issues];
 		}];
 }
 
