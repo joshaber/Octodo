@@ -12,7 +12,7 @@
 
 @interface OTDIssuesViewModel : NSObject
 
-@property (nonatomic, readonly, copy) NSArray *issues;
+@property (nonatomic, readonly, strong) RACTuple *issues;
 
 @property (nonatomic, readonly, strong) RACCommand *closeCommand;
 

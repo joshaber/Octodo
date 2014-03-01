@@ -42,21 +42,27 @@
 	@weakify(self);
 	_closeCommand = [[RACCommand alloc] initWithEnabled:enabled signalBlock:^(OCTIssue *issue) {
 		@strongify(self);
-		return [[self.client
-			postComment:@":boom:" forIssue:issue inRepository:self.repository]
+		return [[self.storeClient
+			deleteIssue:issue]
 			then:^{
-				return [self.client closeIssue:issue inRepository:self.repository];
+				return [[[self.client
+					postComment:@":boom:" forIssue:issue inRepository:self.repository]
+					then:^{
+						return [self.client closeIssue:issue inRepository:self.repository];
+					}]
+					startWith:issue];
 			}];
 	}];
 
 	RAC(self, issues) = [[self.storeClient.issues
 		reduceEach:^(NSDictionary *values, FRZChange *change) {
-			return [[values.rac_keySequence
+			NSArray *issues = [[values.rac_keySequence
 				map:^(NSString *key) {
 					NSDictionary *info = change.changedDatabase[key];
 					return [[OCTIssue alloc] initWithDictionary:info error:NULL];
 				}]
 				array];
+			return RACTuplePack(issues, change);
 		}]
 		deliverOn:RACScheduler.mainThreadScheduler];
 

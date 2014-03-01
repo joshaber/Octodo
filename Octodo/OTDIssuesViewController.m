@@ -30,8 +30,10 @@
 	_viewModel = viewModel;
 
 	@weakify(self);
-	[RACObserve(self.viewModel, issues) subscribeNext:^(id _) {
+	[RACObserve(self.viewModel, issues) subscribeNext:^(RACTuple *tuple) {
 		@strongify(self);
+		FRZChange *change = tuple[1];
+		NSLog(@"%@", change);
 		[self.tableView reloadData];
 	}];
 
@@ -60,7 +62,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.viewModel.issues.count;
+	return [self.viewModel.issues[0] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,10 +80,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//	[tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationLeft];
-
 	OCTIssue *issue = [self issueWithIndexPath:indexPath];
-	[[self.viewModel.closeCommand execute:issue] subscribeError:^(NSError *error) {
+	[[self.viewModel.closeCommand execute:issue] subscribeNext:^(id _) {
+		NSLog(@"D");
+//		[tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationLeft];
+	} error:^(NSError *error) {
 		NSLog(@"Error closing %@: %@", issue, error);
 	}];
 }
@@ -89,7 +92,7 @@
 #pragma mark Data
 
 - (OCTIssue *)issueWithIndexPath:(NSIndexPath *)indexPath {
-	return self.viewModel.issues[indexPath.row];
+	return self.viewModel.issues[0][indexPath.row];
 }
 
 #pragma mark Actions
