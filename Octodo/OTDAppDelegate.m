@@ -92,7 +92,7 @@ static NSString * const OTDAppDelegateLogin = @"login";
 		findTodoIssues:client]
 		collect]
 		flattenMap:^(NSArray *issues) {
-			return [self.storeClient storeIssues:issues];
+			return [self.storeClient addIssues:issues];
 		}];
 }
 

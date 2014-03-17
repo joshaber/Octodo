@@ -14,7 +14,7 @@
 
 - (id)initWithStore:(FRZStore *)store;
 
-- (RACSignal *)storeIssues:(NSArray *)issues;
+- (RACSignal *)addIssues:(NSArray *)issues;
 
 - (RACSignal *)deleteIssue:(OCTIssue *)issue;
 

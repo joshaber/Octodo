@@ -31,7 +31,7 @@ static NSString * const OTDIssues = @"issues";
 
 #pragma mark Data
 
-- (RACSignal *)storeIssues:(NSArray *)issues {
+- (RACSignal *)addIssues:(NSArray *)issues {
 	FRZTransactor *transactor = [self.store transactor];
 	NSError *error;
 	BOOL success = [transactor performChangesWithError:&error block:^(NSError **error) {
@@ -54,7 +54,7 @@ static NSString * const OTDIssues = @"issues";
 - (RACSignal *)deleteIssue:(OCTIssue *)issue {
 	FRZTransactor *transactor = [self.store transactor];
 	NSError *error;
-	BOOL success = [transactor removeValue:issue.objectID forKey:issue.objectID ID:OTDIssues error:&error];
+	BOOL success = [transactor removeValueForKey:issue.objectID ID:OTDIssues error:&error];
 	if (!success) return [RACSignal error:error];
 
 	return [RACSignal empty];

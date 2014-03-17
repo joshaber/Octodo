@@ -45,24 +45,32 @@
 		return [[self.storeClient
 			deleteIssue:issue]
 			then:^{
+				return [RACSignal empty];
 				return [[[self.client
 					postComment:@":boom:" forIssue:issue inRepository:self.repository]
 					then:^{
 						return [self.client closeIssue:issue inRepository:self.repository];
 					}]
-					startWith:issue];
+					doError:^(NSError *error) {
+						[self.storeClient addIssues:@[ issue ]];
+					}];
 			}];
 	}];
 
 	RAC(self, issues) = [[self.storeClient.issues
-		reduceEach:^(NSDictionary *values, FRZChange *change) {
-			NSArray *issues = [[values.rac_keySequence
-				map:^(NSString *key) {
-					NSDictionary *info = change.changedDatabase[key];
-					return [[OCTIssue alloc] initWithDictionary:info error:NULL];
+		map:^(NSArray *changes) {
+			return [[changes.rac_sequence
+				reduceEach:^(NSDictionary *values, FRZChange *change) {
+					NSArray *vs = [[values.rac_keySequence
+						map:^(NSString *key) {
+							NSDictionary *info = change.changedDatabase[key];
+							return [[OCTIssue alloc] initWithDictionary:info error:NULL];
+						}]
+						array];
+
+					return RACTuplePack(vs, change);
 				}]
 				array];
-			return RACTuplePack(issues, change);
 		}]
 		deliverOn:RACScheduler.mainThreadScheduler];
 

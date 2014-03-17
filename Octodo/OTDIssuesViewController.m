@@ -30,11 +30,52 @@
 	_viewModel = viewModel;
 
 	@weakify(self);
-	[RACObserve(self.viewModel, issues) subscribeNext:^(RACTuple *tuple) {
+	[[RACObserve(self.viewModel, issues) combinePreviousWithStart:nil reduce:^ id (NSArray *previous, NSArray *next) {
+		if (previous == nil) {
+			return ^(UITableView *tableView) {
+				[tableView reloadData];
+			};
+		}
+
+		NSMutableArray *adds = [NSMutableArray array];
+		NSMutableArray *deletes = [NSMutableArray array];
+		NSMutableArray *reloads = [NSMutableArray array];
+		for (RACTuple *tuple in next) {
+			RACTupleUnpack(NSArray *newIssues, FRZChange *change) = tuple;
+			NSArray *oldIssues = previous.lastObject[0];
+			id filterBlock = ^(OCTIssue *issue, NSUInteger idx, BOOL *stop) {
+				return [issue.objectID isEqual:change.key];
+			};
+			NSUInteger newIndex = [newIssues indexOfObjectPassingTest:filterBlock];
+			NSUInteger oldIndex = [oldIssues indexOfObjectPassingTest:filterBlock];
+
+			if (change.type == FRZChangeTypeAdd) {
+				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
+				if (oldIndex == newIndex) {
+					[reloads addObject:indexPath];
+				} else {
+					[adds addObject:indexPath];
+				}
+			} else {
+				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:oldIndex inSection:0];
+				[deletes addObject:indexPath];
+			}
+		}
+
+		return ^(UITableView *tableView) {
+			[tableView beginUpdates];
+
+			[tableView insertRowsAtIndexPaths:adds withRowAnimation:UITableViewRowAnimationAutomatic];
+			[tableView deleteRowsAtIndexPaths:deletes withRowAnimation:UITableViewRowAnimationAutomatic];
+			[tableView reloadRowsAtIndexPaths:reloads withRowAnimation:UITableViewRowAnimationAutomatic];
+
+			[tableView endUpdates];
+		};
+	}] subscribeNext:^(void (^action)(UITableView *)) {
 		@strongify(self);
-		FRZChange *change = tuple[1];
-		NSLog(@"%@", change);
-		[self.tableView reloadData];
+		if (action != NULL) {
+			action(self.tableView);
+		}
 	}];
 
 	return self;
@@ -62,7 +103,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.viewModel.issues[0] count];
+	return self.orderedIssues.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,18 +122,20 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	OCTIssue *issue = [self issueWithIndexPath:indexPath];
-	[[self.viewModel.closeCommand execute:issue] subscribeNext:^(id _) {
-		NSLog(@"D");
-//		[tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationLeft];
-	} error:^(NSError *error) {
+	[[self.viewModel.closeCommand execute:issue] subscribeError:^(NSError *error) {
 		NSLog(@"Error closing %@: %@", issue, error);
 	}];
 }
 
 #pragma mark Data
 
+- (NSArray *)orderedIssues {
+	RACTuple *mostRecent = self.viewModel.issues.lastObject;
+	return mostRecent[0];
+}
+
 - (OCTIssue *)issueWithIndexPath:(NSIndexPath *)indexPath {
-	return self.viewModel.issues[0][indexPath.row];
+	return self.orderedIssues[indexPath.row];
 }
 
 #pragma mark Actions
