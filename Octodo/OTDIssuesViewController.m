@@ -31,6 +31,7 @@
 
 	@weakify(self);
 	[[RACObserve(self.viewModel, issues) combinePreviousWithStart:nil reduce:^ id (NSArray *previous, NSArray *next) {
+		// For the initial load, just do a full reload.
 		if (previous == nil) {
 			return ^(UITableView *tableView) {
 				[tableView reloadData];
@@ -40,6 +41,7 @@
 		NSMutableArray *adds = [NSMutableArray array];
 		NSMutableArray *deletes = [NSMutableArray array];
 		NSMutableArray *reloads = [NSMutableArray array];
+		NSMutableArray *moves = [NSMutableArray array];
 		for (RACTuple *tuple in next) {
 			RACTupleUnpack(NSArray *newIssues, FRZChange *change) = tuple;
 			NSArray *oldIssues = previous.lastObject[0];
@@ -53,6 +55,9 @@
 				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
 				if (oldIndex == newIndex) {
 					[reloads addObject:indexPath];
+				} else if (oldIndex != NSNotFound) {
+					NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
+					[moves addObject:RACTuplePack(oldIndexPath, indexPath)];
 				} else {
 					[adds addObject:indexPath];
 				}
@@ -68,6 +73,9 @@
 			[tableView insertRowsAtIndexPaths:adds withRowAnimation:UITableViewRowAnimationAutomatic];
 			[tableView deleteRowsAtIndexPaths:deletes withRowAnimation:UITableViewRowAnimationAutomatic];
 			[tableView reloadRowsAtIndexPaths:reloads withRowAnimation:UITableViewRowAnimationAutomatic];
+			for (RACTuple *tuple in moves) {
+				[tableView moveRowAtIndexPath:tuple[0] toIndexPath:tuple[1]];
+			}
 
 			[tableView endUpdates];
 		};
