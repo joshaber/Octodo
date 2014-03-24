@@ -60,15 +60,15 @@
 	RAC(self, issues) = [[self.storeClient.issues
 		map:^(NSArray *changes) {
 			return [[changes.rac_sequence
-				reduceEach:^(NSDictionary *values, FRZChange *change) {
-					NSArray *vs = [[values.rac_keySequence
+				reduceEach:^(NSDictionary *entries, FRZChange *change) {
+					NSArray *issues = [[entries.rac_keySequence
 						map:^(NSString *key) {
 							NSDictionary *info = change.changedDatabase[key];
 							return [[OCTIssue alloc] initWithDictionary:info error:NULL];
 						}]
 						array];
 
-					return RACTuplePack(vs, change);
+					return RACTuplePack(issues, change);
 				}]
 				array];
 		}]
