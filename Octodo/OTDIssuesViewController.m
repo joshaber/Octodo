@@ -51,19 +51,18 @@
 			NSUInteger newIndex = [newIssues indexOfObjectPassingTest:filterBlock];
 			NSUInteger oldIndex = [oldIssues indexOfObjectPassingTest:filterBlock];
 
+			NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
+			NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:oldIndex inSection:0];
 			if (change.type == FRZChangeTypeAdd) {
-				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
 				if (oldIndex == newIndex) {
-					[reloads addObject:indexPath];
+					[reloads addObject:newIndexPath];
 				} else if (oldIndex != NSNotFound) {
-					NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
-					[moves addObject:RACTuplePack(oldIndexPath, indexPath)];
+					[moves addObject:RACTuplePack(oldIndexPath, newIndexPath)];
 				} else {
-					[adds addObject:indexPath];
+					[adds addObject:newIndexPath];
 				}
 			} else {
-				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:oldIndex inSection:0];
-				[deletes addObject:indexPath];
+				[deletes addObject:oldIndexPath];
 			}
 		}
 
