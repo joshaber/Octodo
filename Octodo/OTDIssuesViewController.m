@@ -111,7 +111,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.orderedIssues.count;
+	return self.mostRecentIssues.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,13 +137,13 @@
 
 #pragma mark Data
 
-- (NSArray *)orderedIssues {
+- (NSArray *)mostRecentIssues {
 	RACTuple *mostRecent = self.viewModel.issues.lastObject;
 	return mostRecent[0];
 }
 
 - (OCTIssue *)issueWithIndexPath:(NSIndexPath *)indexPath {
-	return self.orderedIssues[indexPath.row];
+	return self.mostRecentIssues[indexPath.row];
 }
 
 #pragma mark Actions
