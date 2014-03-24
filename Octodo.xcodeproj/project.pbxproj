@@ -28,6 +28,23 @@
 		880D5B6718B99FEB00A7AAA6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */; };
 		880D5B6918B9A12300A7AAA6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */; };
 		880D5B6A18B9A14E00A7AAA6 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D5A4818B9989F00A7AAA6 /* libISO8601DateFormatter.a */; };
+		88AA7A3E18DFD3410042F610 /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A2A18DFD3410042F610 /* Common.xcconfig */; };
+		88AA7A3F18DFD3410042F610 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A2C18DFD3410042F610 /* Debug.xcconfig */; };
+		88AA7A4018DFD3410042F610 /* Profile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A2D18DFD3410042F610 /* Profile.xcconfig */; };
+		88AA7A4118DFD3410042F610 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A2E18DFD3410042F610 /* Release.xcconfig */; };
+		88AA7A4218DFD3410042F610 /* Test.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A2F18DFD3410042F610 /* Test.xcconfig */; };
+		88AA7A4318DFD3410042F610 /* Application.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3118DFD3410042F610 /* Application.xcconfig */; };
+		88AA7A4418DFD3410042F610 /* StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3218DFD3410042F610 /* StaticLibrary.xcconfig */; };
+		88AA7A4518DFD3410042F610 /* iOS-Application.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */; };
+		88AA7A4618DFD3410042F610 /* iOS-Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3518DFD3410042F610 /* iOS-Base.xcconfig */; };
+		88AA7A4718DFD3410042F610 /* iOS-StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3618DFD3410042F610 /* iOS-StaticLibrary.xcconfig */; };
+		88AA7A4818DFD3410042F610 /* Mac-Application.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3818DFD3410042F610 /* Mac-Application.xcconfig */; };
+		88AA7A4918DFD3410042F610 /* Mac-Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3918DFD3410042F610 /* Mac-Base.xcconfig */; };
+		88AA7A4A18DFD3410042F610 /* Mac-DynamicLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3A18DFD3410042F610 /* Mac-DynamicLibrary.xcconfig */; };
+		88AA7A4B18DFD3410042F610 /* Mac-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3B18DFD3410042F610 /* Mac-Framework.xcconfig */; };
+		88AA7A4C18DFD3410042F610 /* Mac-StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3C18DFD3410042F610 /* Mac-StaticLibrary.xcconfig */; };
+		88AA7A4D18DFD3410042F610 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 88AA7A3D18DFD3410042F610 /* README.md */; };
+		88AA7A6018DFD4290042F610 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AA7A5F18DFD4290042F610 /* Security.framework */; };
 		88DF996518C02AD900E5C480 /* OTDIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DF996318C02AD900E5C480 /* OTDIssuesViewController.m */; };
 		88DF996618C02AD900E5C480 /* OTDIssuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */; };
 		88DF997A18C02C7800E5C480 /* OTDIssuesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DF997918C02C7800E5C480 /* OTDIssuesViewModel.m */; };
@@ -273,6 +290,23 @@
 		880D5B6418B99FCC00A7AAA6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		88AA7A2A18DFD3410042F610 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		88AA7A2C18DFD3410042F610 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		88AA7A2D18DFD3410042F610 /* Profile.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		88AA7A2E18DFD3410042F610 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		88AA7A2F18DFD3410042F610 /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		88AA7A3118DFD3410042F610 /* Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		88AA7A3218DFD3410042F610 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3518DFD3410042F610 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3618DFD3410042F610 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3818DFD3410042F610 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3918DFD3410042F610 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3A18DFD3410042F610 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3B18DFD3410042F610 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3C18DFD3410042F610 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		88AA7A3D18DFD3410042F610 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		88AA7A5F18DFD4290042F610 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		88DF996218C02AD900E5C480 /* OTDIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTDIssuesViewController.h; sourceTree = "<group>"; };
 		88DF996318C02AD900E5C480 /* OTDIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDIssuesViewController.m; sourceTree = "<group>"; };
 		88DF996418C02AD900E5C480 /* OTDIssuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTDIssuesViewController.xib; sourceTree = "<group>"; };
@@ -289,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88AA7A6018DFD4290042F610 /* Security.framework in Frameworks */,
 				880D5B6A18B9A14E00A7AAA6 /* libISO8601DateFormatter.a in Frameworks */,
 				880D5B6918B9A12300A7AAA6 /* libsqlite3.dylib in Frameworks */,
 				880D5B6718B99FEB00A7AAA6 /* MobileCoreServices.framework in Frameworks */,
@@ -324,6 +359,7 @@
 				880D59D818B997C800A7AAA6 /* OctodoTests */,
 				880D59B818B997C800A7AAA6 /* Frameworks */,
 				880D59B718B997C800A7AAA6 /* Products */,
+				88AA7A2818DFD3410042F610 /* Configurations */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,6 +375,7 @@
 		880D59B818B997C800A7AAA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88AA7A5F18DFD4290042F610 /* Security.framework */,
 				88F001AA18BA8F82008EAA53 /* FXKeychain */,
 				880D5B6818B9A12300A7AAA6 /* libsqlite3.dylib */,
 				880D5B6618B99FEB00A7AAA6 /* MobileCoreServices.framework */,
@@ -459,6 +496,70 @@
 				880D5A4818B9989F00A7AAA6 /* libISO8601DateFormatter.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		88AA7A2818DFD3410042F610 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				88AA7A2918DFD3410042F610 /* Base */,
+				88AA7A3318DFD3410042F610 /* iOS */,
+				88AA7A3718DFD3410042F610 /* Mac OS X */,
+				88AA7A3D18DFD3410042F610 /* README.md */,
+			);
+			name = Configurations;
+			path = External/Freezer/External/ReactiveCocoa/external/xcconfigs;
+			sourceTree = "<group>";
+		};
+		88AA7A2918DFD3410042F610 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				88AA7A2A18DFD3410042F610 /* Common.xcconfig */,
+				88AA7A2B18DFD3410042F610 /* Configurations */,
+				88AA7A3018DFD3410042F610 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		88AA7A2B18DFD3410042F610 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				88AA7A2C18DFD3410042F610 /* Debug.xcconfig */,
+				88AA7A2D18DFD3410042F610 /* Profile.xcconfig */,
+				88AA7A2E18DFD3410042F610 /* Release.xcconfig */,
+				88AA7A2F18DFD3410042F610 /* Test.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		88AA7A3018DFD3410042F610 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				88AA7A3118DFD3410042F610 /* Application.xcconfig */,
+				88AA7A3218DFD3410042F610 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		88AA7A3318DFD3410042F610 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */,
+				88AA7A3518DFD3410042F610 /* iOS-Base.xcconfig */,
+				88AA7A3618DFD3410042F610 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		88AA7A3718DFD3410042F610 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				88AA7A3818DFD3410042F610 /* Mac-Application.xcconfig */,
+				88AA7A3918DFD3410042F610 /* Mac-Base.xcconfig */,
+				88AA7A3A18DFD3410042F610 /* Mac-DynamicLibrary.xcconfig */,
+				88AA7A3B18DFD3410042F610 /* Mac-Framework.xcconfig */,
+				88AA7A3C18DFD3410042F610 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 		88F001AA18BA8F82008EAA53 /* FXKeychain */ = {
@@ -739,9 +840,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88AA7A4018DFD3410042F610 /* Profile.xcconfig in Resources */,
 				880D59C418B997C800A7AAA6 /* InfoPlist.strings in Resources */,
+				88AA7A4A18DFD3410042F610 /* Mac-DynamicLibrary.xcconfig in Resources */,
+				88AA7A4318DFD3410042F610 /* Application.xcconfig in Resources */,
 				880D59CC18B997C800A7AAA6 /* Images.xcassets in Resources */,
+				88AA7A4418DFD3410042F610 /* StaticLibrary.xcconfig in Resources */,
+				88AA7A4518DFD3410042F610 /* iOS-Application.xcconfig in Resources */,
+				88AA7A4918DFD3410042F610 /* Mac-Base.xcconfig in Resources */,
 				88DF996618C02AD900E5C480 /* OTDIssuesViewController.xib in Resources */,
+				88AA7A4218DFD3410042F610 /* Test.xcconfig in Resources */,
+				88AA7A4718DFD3410042F610 /* iOS-StaticLibrary.xcconfig in Resources */,
+				88AA7A3F18DFD3410042F610 /* Debug.xcconfig in Resources */,
+				88AA7A4C18DFD3410042F610 /* Mac-StaticLibrary.xcconfig in Resources */,
+				88AA7A4D18DFD3410042F610 /* README.md in Resources */,
+				88AA7A4118DFD3410042F610 /* Release.xcconfig in Resources */,
+				88AA7A3E18DFD3410042F610 /* Common.xcconfig in Resources */,
+				88AA7A4B18DFD3410042F610 /* Mac-Framework.xcconfig in Resources */,
+				88AA7A4618DFD3410042F610 /* iOS-Base.xcconfig in Resources */,
+				88AA7A4818DFD3410042F610 /* Mac-Application.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,78 +956,26 @@
 /* Begin XCBuildConfiguration section */
 		880D59E018B997C800A7AAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AA7A2C18DFD3410042F610 /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		880D59E118B997C800A7AAA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AA7A2E18DFD3410042F610 /* Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		880D59E318B997C800A7AAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -925,6 +990,7 @@
 		};
 		880D59E418B997C800A7AAA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -939,6 +1005,7 @@
 		};
 		880D59E618B997C800A7AAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Octodo.app/Octodo";
@@ -962,6 +1029,7 @@
 		};
 		880D59E718B997C800A7AAA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AA7A3418DFD3410042F610 /* iOS-Application.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Octodo.app/Octodo";
